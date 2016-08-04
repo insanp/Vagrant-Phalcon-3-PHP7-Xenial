@@ -3,8 +3,8 @@
 sudo -s
 
 echo '127.0.0.1 ubuntu-xenial' >> /etc/hosts
-echo 'export LC_CTYPE=en.US.utf8' >> ~/.bashrc
-echo 'export LC_ALL=en_US.utf8' >> ~/.bashrc
+echo 'export LC_CTYPE=en.US.utf8' >> /home/ubuntu/.bashrc
+echo 'export LC_ALL=en_US.utf8' >> /home/ubuntu/.bashrc
 
 apt-get update
 apt-get install -y apache2
