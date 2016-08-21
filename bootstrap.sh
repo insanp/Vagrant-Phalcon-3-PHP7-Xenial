@@ -20,6 +20,7 @@ apt-add-repository ppa:phalcon/stable
 apt-get update
 apt-get install -y php7.0-phalcon
 apt-get install -y php7.0-dev
+apt-get install php-curl
 
 cd /home/ubuntu/
 
@@ -33,6 +34,9 @@ ln -s /etc/php/7.0/mods-available/phalcon.ini /etc/php/7.0/apache2/conf.d/50-pha
 # enabled rewrite mod
 ln -s /etc/apache2/mods-available/rewrite.load /etc/apache2/mods-enabled/rewrite.load
 sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf 
+
+apt-get install docker.io
+docker run -d —-name orientdb -p 2424:2424 -p 2480:2480 -e ORIENTDB_ROOT_PASSWORD=root orientdb:latest
 
 # restart webservice
 service apache2 restart
